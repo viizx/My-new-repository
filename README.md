@@ -1,3 +1,6 @@
 # Codewars
 
-I'll put my solutions for Katas from codewars.com
+<p>While learning javascript I found <a href="http://example.com">codewars</a>.</p>
+
+
+<p>I will be posting my solutions here. </p>
