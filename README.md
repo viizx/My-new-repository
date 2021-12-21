@@ -1,3 +1,3 @@
-# My-new-repository
+# Codewars
 
-Codeanywhere git clone
+I'll put my solutions for Katas on codewars.com
