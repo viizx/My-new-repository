@@ -22,33 +22,29 @@
 // digPow(695, 2) should return 2 since 6² + 9³ + 5⁴= 1390 = 695 * 2
 // digPow(46288, 3) should return 51 since 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688 = 46288 * 51
 
+function digPow(n, p) {
+  console.log(n, p);
+  const arrayOfDigits = Array.from(String(n), Number);
 
-function digPow(n, p){
-    console.log(n, p)
-    const arrayOfDigits = Array.from(String(n), Number);
-    
-    console.log(arrayOfDigits)
-    let sum = 0;
-    let pointer = 0;
-    for (let i = p; pointer<arrayOfDigits.length+1; i++, pointer++){
-      
-       
-     sum += Math.pow(arrayOfDigits[pointer], i);
-      console.log(sum, pointer)
-      
-      if ( pointer === arrayOfDigits.length-1){
-          console.log (n, sum, sum/n)
-        if (sum%n !== 0){
-          console.log(-1)
-          return -1
+  console.log(arrayOfDigits);
+  let sum = 0;
+  let pointer = 0;
+  for (let i = p; pointer < arrayOfDigits.length + 1; i++, pointer++) {
+    sum += Math.pow(arrayOfDigits[pointer], i);
+    console.log(sum, pointer);
+
+    if (pointer === arrayOfDigits.length - 1) {
+      console.log(n, sum, sum / n);
+      if (sum % n !== 0) {
+        console.log(-1);
+        return -1;
+      } else {
+        if (sum / n >= n / sum) {
+          return sum / n;
         } else {
-          
-          if(sum/n >= n/sum){
-          return sum/n
-          } else {
-            return n/sum
-          }
+          return n / sum;
         }
-       }
       }
     }
+  }
+}
