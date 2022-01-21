@@ -9,7 +9,7 @@
 // L = ["ABART 20", "CDXEF 50", "BKWRK 25", "BTSQZ 89", "DRTYM 60"] or ....
 // You will be given a stocklist (e.g. : L) and a list of categories in capital letters e.g :
 
-// M = {"A", "B", "C", "W"} 
+// M = {"A", "B", "C", "W"}
 // or
 // M = ["A", "B", "C", "W"] or ...
 // and your task is to find all the books of L with codes belonging to each category of M and to sum their quantity according to each category.
@@ -24,36 +24,29 @@
 // Note:
 // In the result codes and their values are in the same order as in M.
 
+b = ["ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"];
+c = ["A", "B"];
 
-b = ["ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"]
-c = ["A", "B"]
+function stockList(listOfArt, listOfCat) {
+    if (listOfArt.length == 0 || listOfCat.length == 0) return "";
+  let count = {};
 
+  listOfArt.forEach((i) => {
+    num = i.replace(/^\D+/g, "");
 
-function stockList(listOfArt, listOfCat){
-    console.log(listOfArt, listOfCat)
-    
-    let count = {}
-
-    listOfArt.forEach((i) => {
-
-        num = i.replace(/^\D+/g, "");
-        console.log(num, i.charAt(0));
-
-        count[i.charAt(0)] = (count[i.charAt(0)] || 0) + parseInt(num);
-        
+    count[i.charAt(0)] = (count[i.charAt(0)] || 0) + parseInt(num);
   });
-        
+
   let keys = Object.keys(count);
   let values = Object.values(count);
 
-  console.log(keys, values);
+  let newStr = "";
 
-  let string = ""
-  
-
-  listOfCat.forEach(j => {
-      console.log(j)
-});
+  listOfCat.forEach((element) => {
+    if (element in count) newStr += `(${element} : ${count[element]}) - `;
+    else newStr += `(${element} : 0) - `;
+  });
+  return newStr.slice(0, -3);
 }
 
-  stockList(b, c);
+stockList(b, c);
