@@ -24,11 +24,8 @@
 // Note:
 // In the result codes and their values are in the same order as in M.
 
-b = ["ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"];
-c = ["A", "B"];
-
 function stockList(listOfArt, listOfCat) {
-    if (listOfArt.length == 0 || listOfCat.length == 0) return "";
+  if (listOfArt.length == 0 || listOfCat.length == 0) return "";
   let count = {};
 
   listOfArt.forEach((i) => {
@@ -48,5 +45,3 @@ function stockList(listOfArt, listOfCat) {
   });
   return newStr.slice(0, -3);
 }
-
-stockList(b, c);
