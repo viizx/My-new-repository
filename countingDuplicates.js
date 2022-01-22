@@ -22,8 +22,6 @@ function duplicateCount(text) {
       list[i] = (list[i] || 0) + 1;
     });
 
-  console.log(list);
-
   let duplicateNumber = 0;
   Object.values(list).forEach((val) => {
     if (val >= 2) duplicateNumber += 1;
