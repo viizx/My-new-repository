@@ -17,28 +17,26 @@
 // Focus attention on efficiency
 
 function dblLinear(n) {
-    let ai = 0;
-    let bi = 0;
-    let eq = 0;
-    let arr = [1]
-    while (ai+bi < n+eq){
-        
-        let a = 2*arr[ai]+1;
-        let b = 3*arr[bi]+1;
-        
-        if (a<b) {
-            arr.push(a);
-            ai++;
-        } else if (a>b) {
-            arr.push(b);
-            bi++;
-        } else {
-            arr.push(a);
-            eq++;
-            ai++;
-            bi++;
-        }
+  let ai = 0;
+  let bi = 0;
+  let eq = 0;
+  let arr = [1];
+  while (ai + bi < n + eq) {
+    let a = 2 * arr[ai] + 1;
+    let b = 3 * arr[bi] + 1;
 
-        }
-        return arr[n]
+    if (a < b) {
+      arr.push(a);
+      ai++;
+    } else if (a > b) {
+      arr.push(b);
+      bi++;
+    } else {
+      arr.push(a);
+      eq++;
+      ai++;
+      bi++;
     }
+  }
+  return arr[n];
+}
